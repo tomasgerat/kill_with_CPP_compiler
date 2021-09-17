@@ -1,0 +1,73 @@
+#include <iostream>
+using namespace std;
+
+template<int n> struct funStruct
+{
+    enum { val = funStruct<n-1>::val };
+};
+
+template<> struct funStruct<0>
+{
+    enum { val = 1 };
+};
+
+template<int n> struct funStruct2
+{
+    enum { val = funStruct2<n-1>::val };
+};
+
+template<> struct funStruct2<0>
+{
+    enum { val = 1 };
+};
+
+template<int n> struct funStruct3
+{
+    enum { val = funStruct3<n-1>::val };
+};
+
+template<> struct funStruct3<0>
+{
+    enum { val = 1 };
+};
+
+template<int n> struct funStruct4
+{
+    enum { val = funStruct4<n-1>::val };
+};
+
+template<> struct funStruct4<0>
+{
+    enum { val = 1 };
+};
+
+template<int n> struct funStruct5
+{
+    enum { val = funStruct5<n-1>::val };
+};
+
+template<> struct funStruct5<0>
+{
+    enum { val = 1 };
+};
+
+template<int n> struct funStruct6
+{
+    enum { val = funStruct6<n-1>::val };
+};
+
+template<> struct funStruct6<0>
+{
+    enum { val = 1 };
+};
+
+int main()
+{
+    cout << funStruct<900>::val << endl;
+    cout << funStruct2<900>::val << endl;
+    cout << funStruct3<900>::val << endl;
+    cout << funStruct4<900>::val << endl;
+    cout << funStruct5<900>::val << endl;
+    cout << funStruct6<900>::val << endl;
+    return 0;
+}
